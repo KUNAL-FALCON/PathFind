@@ -32,7 +32,7 @@ async function Dijikstra() {
 
             grid[i][j].showyou(color(255));
             grid[i][j].camefrom = null;
-            grid[i][j].visited = false;
+            grid[i][j].visited = grid[i][j].wall;
         }
     }
 
