@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <title>Pathfinder</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src = "JavaScript/p5.js"></script>
+  <script src = "JavaScript/Grid.js"></script>
+  <script src = "JavaScript/mEvent.js"></script>
+  <script src = "JavaScript/Queue.js"></script>
+  <script src = "JavaScript/Algo1.js"></script>
+  <script src = "JavaScript/Algo2.js"></script>
+  <script src = "JavaScript/main.js"></script>
+
+</head>
+
+<body>
+    <div id="algorithm_panel" class="panel right_panel">
+    <header><h2 class="header_title">Algorithm</h2></header>
+    
+    <div class="input-field col s12">
+    <select name="algorithm" id="algorithm-panel">
+      <option value="Astar">A*</option>
+      <option value="BFS">Breadth First Search </option>
+      <option value="DFS">Depth First Search</option>
+      <option value="Djisktra">Djikstra</option>
+    </select>
+    </div>
+    <br>
+    
+    <header><h2 class="header_title">Maze Generation Algorithm</h2></header>
+    <div class="custom-select">
+    <select name="maze-algorithm" id="maze-algorithm">
+      <option value="Random">Random</option>
+      <option value="Recursive">Recursive </option>
+      <option value="Recursive_Vertical">Recursive_Vertical</option>
+      <option value="Recursive_Horizontal">Recursive_Horizontal</option>
+    </select>
+    </div>
+    <br>
+    <header><h2 class="header_title">Animation Speed</h2></header>
+    <div class="custom-select">    
+    <select name="speed" id="speed">
+      <option value="fast">Fast</option>
+      <option value="medium">Medium</option>
+      <option value="slow">Slow</option>
+    </select>
+    </div>
+    </div>
+    <div id="play_panel" class="panel right_panel">
+      <button id="btn1" class="control_button">Start Search</button>
+      <button id="btn2" class="control_button">Clear Walls</button>
+    </div>
+    
+</body>
+
+</html>  
