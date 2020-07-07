@@ -9,11 +9,11 @@ function QItem(x , y , w) {
     this.dist = w;
 }
 
-var que = new Queue();
-var source = new QItem(0 , 0 , 0);
-
 async function Dijikstra() {
 
+    var que = new Queue();
+    var source = new QItem(0 , 0 , 0);
+    
     var ok = false;
     for(var i = 0 ; i < col ; i++) {
         for(var j = 0 ; j < col ; j++ ) {
@@ -26,6 +26,14 @@ async function Dijikstra() {
             }
         }
         if(ok) break;
+    }
+    for(var i = 0 ; i < col ; i++) {
+        for(var j = 0 ; j < row ; j++ ) {
+
+            grid[i][j].showyou(color(255));
+            grid[i][j].camefrom = null;
+            grid[i][j].visited = false;
+        }
     }
 
     que.enqueue(source);
