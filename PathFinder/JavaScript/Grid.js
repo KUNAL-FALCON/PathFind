@@ -27,7 +27,7 @@ class Cell {
         fill(col);
         if (this.wall) fill(124, 125, 125);
 
-        strokeWeight(0.2);
+        strokeWeight(1);
         stroke(124, 125, 125);
 
         rect(this.i * w, this.j * h, w, h);
@@ -72,7 +72,7 @@ class Cell {
 
 function setup() {
 
-    createCanvas(1360, 650);
+    createCanvas(window.innerWidth, window.innerHeight);
     h = height / row;
     w = width / col;
 
