@@ -89,6 +89,7 @@ button {
     margin: 0 2%;
     width: 28%;
     color: white;
+    text-align: center;
 }
 
 button:hover {
@@ -151,4 +152,15 @@ footer {
 
 .spinner {
     width: 2em;
+}
+
+#defaultCanvas0 {
+    margin: 40px;
+    width: 250px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+#heading{
+    text-align: center;
+    margin: 4px;
 }
