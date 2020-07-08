@@ -27,7 +27,7 @@ class Cell {
         fill(col);
         if (this.wall) fill(124, 125, 125);
 
-        strokeWeight(1);
+        strokeWeight(0.2);
         stroke(124, 125, 125);
 
         rect(this.i * w, this.j * h, w, h);
