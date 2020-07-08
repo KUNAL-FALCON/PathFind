@@ -67,13 +67,16 @@ $(document).on("mousedown", function(event) {
                     var xf = Math.floor(mouseX / w);
                     var yf = Math.floor(mouseY / h);
 
-                    grid[xc][yc].wall = false;
-                    grid[xc][yc].visited = false;
-                    grid[xc][yc].showyou(color(255));
+                    if(grid[xf][yf].wall != true) {
+                        grid[xc][yc].wall = false;
+                        grid[xc][yc].visited = false;
+                        grid[xc][yc].showyou(color(255));
 
-                    strt = grid[xf][yf];
-                    strt.showyou(color(0, 255, 0));
-                    grid[xf][yf].showyou(color(0, 255, 0));
+                        strt = grid[xf][yf];
+                        strt.showyou(color(0, 255, 0));
+                        grid[xf][yf].showyou(color(0, 255, 0));
+                    }
+
                     $(this).unbind("mouseup");
                 });
             } else if (grid[xc][yc] == end) {
@@ -82,13 +85,14 @@ $(document).on("mousedown", function(event) {
                     var xf = Math.floor(mouseX / w);
                     var yf = Math.floor(mouseY / h);
 
-                    grid[xc][yc].wall = false;
-                    grid[xc][yc].visited = false;
-                    grid[xc][yc].showyou(color(255));
+                    if(grid[xf][yf].wall != true) {
+                        grid[xc][yc].wall = false;
+                        grid[xc][yc].visited = false;
+                        grid[xc][yc].showyou(color(255));
 
-                    end = grid[xf][yf];
-                    end.showyou(color(255, 0, 0));
-
+                        end = grid[xf][yf];
+                        end.showyou(color(255, 0, 0));
+                    }
                     $(this).unbind("mouseup");
                 });
             }
