@@ -1,37 +1,39 @@
-class Queue 
-{ 
+class QItem {
+    constructor(x, y, w) {
+        this.row = x;
+        this.col = y;
+        this.dist = w;
+    }
+}
+
+class Queue {
     //Array Is Used to Implement Queue 
-    constructor() 
-    { 
-        this.items = []; 
-    } 
+    constructor() {
+        this.items = [];
+    }
 
     //Push In the Array!!
-    enqueue(element) 
-    {	 
-	    this.items.push(element);   
+    enqueue(element) {
+        this.items.push(element);
     }
 
     //Dequeue function 
-    dequeue = function() 
-    {  
-        if(this.isEmpty()) return "Underflow"; 
-        return this.items.shift(); 
+    dequeue() {
+        if (this.isEmpty()) return "Underflow";
+        return this.items.shift();
     }
-     
+
     //Front function 
-    front = function() 
-    {  
-        if(this.isEmpty()) return "No elements in Queue"; 
-        return this.items[0]; 
-    } 
+    front() {
+        if (this.isEmpty()) return "No elements in Queue";
+        return this.items[0];
+    }
 
     //IsEmpty function 
-    isEmpty = function() 
-    { 
-        return this.items.length == 0; 
-    } 
-} 
+    isEmpty() {
+        return this.items.length == 0;
+    }
+}
 
 
 class queue_element {
