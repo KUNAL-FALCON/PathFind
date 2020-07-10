@@ -81,3 +81,20 @@ class priority_queue {
         return this.items.length == 0;
     }
 }
+
+function success(c) {
+    swal({
+        title: "Congratulations!!",
+        text: "Found Path with length " + c,
+        icon: "success",
+        button: "OK",
+    });
+}
+function fail() {
+    swal({
+        title: "Sorry",
+        text: "No Path Found!",
+        icon: "error",
+        button: "no!",
+    });
+}
