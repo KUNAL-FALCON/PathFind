@@ -5,17 +5,44 @@ $(document).ready(function() {
         document.getElementById("strt").disabled = true;
         document.getElementById("can").disabled = false;
 
+        var x = document.getElementsByName("algo");
 
-        var value = $("#algorithm-panel option:selected");
+        if (x[0].checked) {
+            var value = $("#algorithm-panel option:selected");
+            switch (value.text()) {
+                case "Dijkstra":
+                    Dijkstra();
+                    break;
 
-        switch (value.text()) {
-            case "Dijkstra":
-                Dijkstra();
-                break;
+                case "A*":
+                    Astar();
+                    break;
+                default:
+                    swal({
+                        text: "Please Select a Algorithm to Start !!",
+                        icon: "info",
+                        button: "OK",
+                    });
+                    document.getElementById("clr").disabled = false;
+                    document.getElementById("strt").disabled = false;
+                    document.getElementById("can").disabled = true;
+                    break;
 
-            case "A*":
-                Astar();
-                break;
+            }
+        } else if (x[1].checked) {
+            calc_dis();
+        } else {
+            swal({
+                text: "Please Tell : Single Destination or Multiple Destination ?",
+                icon: "info",
+                button: "OK",
+            });
+
+
+            document.getElementById("clr").disabled = false;
+            document.getElementById("strt").disabled = false;
+            document.getElementById("can").disabled = true;
+
         }
     });
 
@@ -27,12 +54,13 @@ $(document).ready(function() {
                 grid[i][j].showyou(color(255));
             }
         }
-        strt.showyou(color(0, 255, 0));
+        strt.showyou(color(0, 255, 0))
         end.showyou(color(255, 0, 0));
+
+
     });
 
     $('#can').click(function() {
         abort = true;
     });
-
 });
