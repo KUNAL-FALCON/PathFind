@@ -68,12 +68,7 @@ async function Astar() {
             endShape();
             var c = path.length;
             c--;
-            swal({
-                title: "Congratulations!!",
-                text: "Found the path with length=" + c,
-                icon: "success",
-                button: "yes!",
-            });
+            success(c);
             break;
         } else {
 
@@ -122,12 +117,7 @@ async function Astar() {
         }
     }
     if (!check && pqueue.isEmpty()) {
-        swal({
-            title: "Sorry",
-            text: "No Path Found!",
-            icon: "error",
-            button: "no!",
-        });
+        fail();
         strt.showyou(color(0, 255, 0));
         end.showyou(color(255, 0, 0));
 
@@ -136,6 +126,6 @@ async function Astar() {
     document.getElementById("clr").disabled = false;
     document.getElementById("strt").disabled = false;
     document.getElementById("can").disabled = true;
-    first_time = 2;
+    first_time = 3;
 }
 //end of the code!!
