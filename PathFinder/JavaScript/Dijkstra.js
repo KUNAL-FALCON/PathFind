@@ -6,11 +6,10 @@ function sleep(ms) {
 
 async function Dijkstra() {
     var que = new Queue();
-    var source = new QItem(0, 0, 0);
+    
 
     var ok = false;
-    source.row = strt.i;
-    source.col = strt.j;
+    
 
     for (var i = 0; i < col; i++) {
         for (var j = 0; j < row; j++) {
@@ -28,7 +27,7 @@ async function Dijkstra() {
         }
     }
 
-    que.enqueue(source);
+    que.enqueue(new QItem(strt.i , strt.j , 0));
     var cSet = [];
     var check = false;
 
@@ -69,15 +68,9 @@ async function Dijkstra() {
                     break;
                 }
             }
-            swal({
-                title: "Congratulations!!",
-                text: "Found the path with length=" + cnt,
-                icon: "success",
-                button: "yes!",
-            });
-
+            success(cnt);
             endShape();
-            //end.showyou(color(255, 0, 0));
+
             break;
         } else {
             var neigh = grid[p.row][p.col].neighbours;
@@ -85,9 +78,8 @@ async function Dijkstra() {
 
                 var neighbor = neigh[i];
 
-                if (!neighbor.visited) {
-                    var q = new QItem(neighbor.i, neighbor.j, p.dist + 1);
-                    que.enqueue(q);
+                if (!neighbor.visited) { 
+                    que.enqueue( new QItem(neighbor.i, neighbor.j, p.dist + 1));
                     neighbor.visited = true;
                     neighbor.camefrom = grid[p.row][p.col];
                 }
@@ -107,17 +99,12 @@ async function Dijkstra() {
         }
     }
     if (!check && que.isEmpty()) {
-        swal({
-            title: "Sorry",
-            text: "No Path Found!",
-            icon: "error",
-            button: "no!",
-        });
+        fail();
         strt.showyou(color(0, 255, 0));
         end.showyou(color(255, 0, 0));
     }
     document.getElementById("clr").disabled = false;
     document.getElementById("strt").disabled = false;
     document.getElementById("can").disabled = true;
-    first_time = 2;
+    first_time = 3;
 }
