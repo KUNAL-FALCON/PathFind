@@ -25,13 +25,12 @@ class Cell {
 
     showyou(col) {
         fill(col);
-        if (this.wall) fill(124, 125, 125);
 
-        strokeWeight(0.2);
-        stroke(124, 125, 125);
+        if (this.wall) fill(100, 100, 100);
 
-        
-        rect(this.i * w, this.j * h, w, h);
+        strokeWeight(0.3);
+        stroke(100, 100, 100);
+        rect(this.i * w, this.j * h, w, h, 5);
     }
 
 
@@ -73,12 +72,12 @@ class Cell {
 
 function setup() {
 
-    createCanvas(1360, 650);
-    
+    createCanvas(1335, 585);
+
     var canvas = document.getElementById("defaultCanvas0");
-    
+
     var ctx = canvas.getContext('2d');
-    ctx.shadowColor = "grey"
+    ctx.shadowColor = "grey";
     ctx.shadowBlur = 1;
 
     h = height / row;
@@ -91,10 +90,9 @@ function setup() {
 
             grid[i][j] = new Cell(i, j);
             grid[i][j].showyou(color(255));
-
         }
     }
-    strt = grid[20][10];
+    strt = grid[18][10];
     end = grid[25][10];
 
     strt.wall = false;
@@ -102,6 +100,4 @@ function setup() {
 
     strt.showyou(color(0, 255, 0));
     end.showyou(color(255, 0, 0));
-
-    
 }
