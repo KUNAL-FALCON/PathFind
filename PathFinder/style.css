@@ -1,7 +1,9 @@
 body {
     padding: 0px;
-    margin: 0px;
     overflow: hidden;
+    /* The image used */
+    background-image: url("space.jpg");
+    /* Full height */
 }
 
 input {
@@ -17,6 +19,7 @@ h6 {
     margin: 0px;
     padding: 0px;
     font-weight: normal;
+    color: white;
 }
 
 .header_title {
@@ -28,11 +31,14 @@ h6 {
 
 .panel {
     position: fixed;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    background-color: rgba(50, 50, 50, 0.5);
+    /*background-color: rgba(47, 79, 79, 0.5);
+    */
     color: white;
     border-radius: 8px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 5px 5px 10px rgba(47, 79, 79, 10);
+    */
     cursor: default;
 }
 
@@ -62,12 +68,12 @@ h6 {
 .right_panel {
     width: 250px;
     right: 20px;
-    top: 190px;
+    top: 310px;
 }
 
 #algorithm_panel {
     right: 20px;
-    top: 20px;
+    top: 70px;
 }
 
 .option_header {
@@ -81,14 +87,14 @@ h6 {
 
 button {
     border: none;
-    background: rgba(0, 0, 0, 0.7);
+    background: white;
     border-radius: 5px;
     font-size: 100%;
     cursor: pointer;
     padding-bottom: 0px;
     margin: 0 2%;
     width: 28%;
-    color: white;
+    color: rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
@@ -124,43 +130,55 @@ a {
     color: #33f;
 }
 
-footer {
-    color: #333;
-    font-size: 70%;
-    text-align: center;
-    position: fixed;
-    width: 200px;
-    bottom: 10px;
-    left: 50%;
-    margin-left: -100px;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.white {
-    color: #fff;
-}
-
-.green {
-    color: #0d0;
-}
-
-.red {
-    color: #ff9166;
-}
-
 .spinner {
     width: 2em;
 }
 
 #defaultCanvas0 {
     margin: 40px;
-    width: 250px;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    margin-left: 80px;
+    padding: 10px;
 }
-#heading{
+
+#heading {
     text-align: center;
-    margin: 4px;
+    margin: 6px;
+}
+
+#cursor1 {
+    display: none;
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    border: 2px dashed #008000;
+    animation: animate 2s linear infinite;
+    box-sizing: border-box;
+    transition: 0s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background-color: #00FF00;
+}
+
+#cursor2 {
+    display: none;
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    border: 2px dashed #8B0000;
+    animation: animate 2s linear infinite;
+    box-sizing: border-box;
+    transition: 0s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background-color: #FF0000;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
